@@ -35,17 +35,14 @@
 #
 
 [Sources]
-  NdkBootPicker.h
   NdkBootPicker.c
   ImageSupport.c
-  FontData.h
 
 [Packages]
   OpenCorePkg/OpenCorePkg.dec
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   UefiCpuPkg/UefiCpuPkg.dec
-  EfiPkg/EfiPkg.dec
 
 [Protocols]
   gOcInterfaceProtocolGuid                 ## SOMETIMES_PRODUCES
@@ -54,5 +51,6 @@
 [LibraryClasses]
   OcBootManagementLib
   OcPngLib
+  OcStorageLib
   UefiBootServicesTableLib
   UefiDriverEntryPoint

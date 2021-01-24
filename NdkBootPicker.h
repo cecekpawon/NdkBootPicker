@@ -39,46 +39,48 @@
 
 /*========== UI's defined variables ==========*/
 
-#define UI_IMAGE_POINTER              L"EFI\\OC\\Icons\\pointer4k.png"
-#define UI_IMAGE_POINTER_ALT          L"EFI\\OC\\Icons\\pointer.png"
-#define UI_IMAGE_POINTER_HAND         L"EFI\\OC\\Icons\\pointeralt.png"
-#define UI_IMAGE_FONT                 L"EFI\\OC\\Icons\\font.png"
-#define UI_IMAGE_FONT_COLOR           L"EFI\\OC\\Icons\\font_color.png"
-#define UI_IMAGE_BACKGROUND           L"EFI\\OC\\Icons\\background4k.png"
-#define UI_IMAGE_BACKGROUND_ALT       L"EFI\\OC\\Icons\\background.png"
-#define UI_IMAGE_BACKGROUND_COLOR     L"EFI\\OC\\Icons\\background_color.png"
-#define UI_IMAGE_SELECTOR             L"EFI\\OC\\Icons\\selector4k.png"
-#define UI_IMAGE_SELECTOR_ALT         L"EFI\\OC\\Icons\\selector.png"
-#define UI_IMAGE_SELECTOR_OFF         L"EFI\\OC\\Icons\\no_selector.png"
-#define UI_IMAGE_SELECTOR_FUNC        L"EFI\\OC\\Icons\\func_selector.png"
-#define UI_IMAGE_LABEL                L"EFI\\OC\\Icons\\label.png"
-#define UI_IMAGE_LABEL_OFF            L"EFI\\OC\\Icons\\no_label.png"
-#define UI_IMAGE_TEXT_SCALE_OFF       L"EFI\\OC\\Icons\\No_text_scaling.png"
-#define UI_IMAGE_ICON_SCALE_OFF       L"EFI\\OC\\Icons\\No_icon_scaling.png"
+#define UI_IMAGE_DIR                  L"Icons\\"
+
+#define UI_IMAGE_POINTER              UI_IMAGE_DIR L"pointer4k.png"
+#define UI_IMAGE_POINTER_ALT          UI_IMAGE_DIR L"pointer.png"
+#define UI_IMAGE_POINTER_HAND         UI_IMAGE_DIR L"pointeralt.png"
+#define UI_IMAGE_FONT                 UI_IMAGE_DIR L"font.png"
+#define UI_IMAGE_FONT_COLOR           UI_IMAGE_DIR L"font_color.png"
+#define UI_IMAGE_BACKGROUND           UI_IMAGE_DIR L"background4k.png"
+#define UI_IMAGE_BACKGROUND_ALT       UI_IMAGE_DIR L"background.png"
+#define UI_IMAGE_BACKGROUND_COLOR     UI_IMAGE_DIR L"background_color.png"
+#define UI_IMAGE_SELECTOR             UI_IMAGE_DIR L"selector4k.png"
+#define UI_IMAGE_SELECTOR_ALT         UI_IMAGE_DIR L"selector.png"
+#define UI_IMAGE_SELECTOR_OFF         UI_IMAGE_DIR L"no_selector.png"
+#define UI_IMAGE_SELECTOR_FUNC        UI_IMAGE_DIR L"func_selector.png"
+#define UI_IMAGE_LABEL                UI_IMAGE_DIR L"label.png"
+#define UI_IMAGE_LABEL_OFF            UI_IMAGE_DIR L"no_label.png"
+#define UI_IMAGE_TEXT_SCALE_OFF       UI_IMAGE_DIR L"No_text_scaling.png"
+#define UI_IMAGE_ICON_SCALE_OFF       UI_IMAGE_DIR L"No_icon_scaling.png"
 
 
-#define UI_ICON_WIN                   L"EFI\\OC\\Icons\\os_win.icns"
-#define UI_ICON_WIN10                 L"EFI\\OC\\Icons\\os_win10.icns"
-#define UI_ICON_INSTALL               L"EFI\\OC\\Icons\\os_install.icns"
-#define UI_ICON_MAC                   L"EFI\\OC\\Icons\\os_mac.icns"
-#define UI_ICON_MAC_CATA              L"EFI\\OC\\Icons\\os_cata.icns"
-#define UI_ICON_MAC_MOJA              L"EFI\\OC\\Icons\\os_moja.icns"
-#define UI_ICON_MAC_RECOVERY          L"EFI\\OC\\Icons\\os_recovery.icns"
-#define UI_ICON_CLONE                 L"EFI\\OC\\Icons\\os_clone.icns"
-#define UI_ICON_FREEBSD               L"EFI\\OC\\Icons\\os_freebsd.icns"
-#define UI_ICON_LINUX                 L"EFI\\OC\\Icons\\os_linux.icns"
-#define UI_ICON_REDHAT                L"EFI\\OC\\Icons\\os_redhat.icns"
-#define UI_ICON_UBUNTU                L"EFI\\OC\\Icons\\os_ubuntu.icns"
-#define UI_ICON_FEDORA                L"EFI\\OC\\Icons\\os_fedora.icns"
-#define UI_ICON_DEBIAN                L"EFI\\OC\\Icons\\os_debian.icns"
-#define UI_ICON_ARCH                  L"EFI\\OC\\Icons\\os_arch.icns"
-#define UI_ICON_UBUNTU                L"EFI\\OC\\Icons\\os_ubuntu.icns"
-#define UI_ICON_CUSTOM                L"EFI\\OC\\Icons\\os_custom.icns"
-#define UI_ICON_SHELL                 L"EFI\\OC\\Icons\\tool_shell.icns"
-#define UI_ICON_RESETNVRAM            L"EFI\\OC\\Icons\\func_resetnvram.icns"
-#define UI_ICON_RESET                 L"EFI\\OC\\Icons\\func_reset.icns"
-#define UI_ICON_SHUTDOWN              L"EFI\\OC\\Icons\\func_shutdown.icns"
-#define UI_ICON_UNKNOWN               L"EFI\\OC\\Icons\\os_unknown.icns"
+#define UI_ICON_WIN                   UI_IMAGE_DIR L"os_win.icns"
+#define UI_ICON_WIN10                 UI_IMAGE_DIR L"os_win10.icns"
+#define UI_ICON_INSTALL               UI_IMAGE_DIR L"os_install.icns"
+#define UI_ICON_MAC                   UI_IMAGE_DIR L"os_mac.icns"
+#define UI_ICON_MAC_CATA              UI_IMAGE_DIR L"os_cata.icns"
+#define UI_ICON_MAC_MOJA              UI_IMAGE_DIR L"os_moja.icns"
+#define UI_ICON_MAC_RECOVERY          UI_IMAGE_DIR L"os_recovery.icns"
+#define UI_ICON_CLONE                 UI_IMAGE_DIR L"os_clone.icns"
+#define UI_ICON_FREEBSD               UI_IMAGE_DIR L"os_freebsd.icns"
+#define UI_ICON_LINUX                 UI_IMAGE_DIR L"os_linux.icns"
+#define UI_ICON_REDHAT                UI_IMAGE_DIR L"os_redhat.icns"
+#define UI_ICON_UBUNTU                UI_IMAGE_DIR L"os_ubuntu.icns"
+#define UI_ICON_FEDORA                UI_IMAGE_DIR L"os_fedora.icns"
+#define UI_ICON_DEBIAN                UI_IMAGE_DIR L"os_debian.icns"
+#define UI_ICON_ARCH                  UI_IMAGE_DIR L"os_arch.icns"
+#define UI_ICON_UBUNTU                UI_IMAGE_DIR L"os_ubuntu.icns"
+#define UI_ICON_CUSTOM                UI_IMAGE_DIR L"os_custom.icns"
+#define UI_ICON_SHELL                 UI_IMAGE_DIR L"tool_shell.icns"
+#define UI_ICON_RESETNVRAM            UI_IMAGE_DIR L"func_resetnvram.icns"
+#define UI_ICON_RESET                 UI_IMAGE_DIR L"func_reset.icns"
+#define UI_ICON_SHUTDOWN              UI_IMAGE_DIR L"func_shutdown.icns"
+#define UI_ICON_UNKNOWN               UI_IMAGE_DIR L"os_unknown.icns"
 
 #define UI_MENU_SYSTEM_RESET          L"Restart"
 #define UI_MENU_SYSTEM_SHUTDOWN       L"Shutdown"
@@ -91,7 +93,7 @@
 typedef
 VOID
 (*NDK_ICON_ACTION)(
-  IN EFI_RESET_TYPE               ResetType
+  IN EFI_RESET_TYPE   ResetType
   );
 
 typedef struct _NDK_UI_IMAGE {
@@ -102,12 +104,12 @@ typedef struct _NDK_UI_IMAGE {
 } NDK_UI_IMAGE;
 
 typedef struct _NDK_UI_ICON {
-  INTN                            Xpos;
-  INTN                            Ypos;
-  BOOLEAN                         IsSelected;
-  NDK_ICON_ACTION                 Action;
-  NDK_UI_IMAGE                    *Image;
-  NDK_UI_IMAGE                    *Selector;
+  INTN              Xpos;
+  INTN              Ypos;
+  BOOLEAN           IsSelected;
+  NDK_ICON_ACTION   Action;
+  NDK_UI_IMAGE      *Image;
+  NDK_UI_IMAGE      *Selector;
 } NDK_UI_ICON;
 
 /*========== Pointer ==========*/
@@ -141,19 +143,19 @@ typedef struct {
 } AREA_RECT;
 
 typedef struct _pointers {
-  EFI_SIMPLE_POINTER_PROTOCOL *SimplePointerProtocol;
-  NDK_UI_IMAGE                *Pointer;
-  NDK_UI_IMAGE                *PointerAlt;
-  NDK_UI_IMAGE                *NewImage;
-  NDK_UI_IMAGE                *OldImage;
-  
-  AREA_RECT                   NewPlace;
-  AREA_RECT                   OldPlace;
-  
-  BOOLEAN                     IsClickable;
-  UINT64                      LastClickTime;
-  EFI_SIMPLE_POINTER_STATE    State;
-  MOUSE_EVENT                 MouseEvent;
+  EFI_SIMPLE_POINTER_PROTOCOL   *SimplePointerProtocol;
+  NDK_UI_IMAGE                  *Pointer;
+  NDK_UI_IMAGE                  *PointerAlt;
+  NDK_UI_IMAGE                  *NewImage;
+  NDK_UI_IMAGE                  *OldImage;
+
+  AREA_RECT                     NewPlace;
+  AREA_RECT                     OldPlace;
+
+  BOOLEAN                       IsClickable;
+  UINT64                        LastClickTime;
+  EFI_SIMPLE_POINTER_STATE      State;
+  MOUSE_EVENT                   MouseEvent;
 } POINTERS;
 
 /*================ ImageSupport.c =============*/
@@ -164,17 +166,17 @@ typedef struct _pointers {
 
 NDK_UI_IMAGE *
 CreateImage (
-  IN UINT16       Width,
-  IN UINT16       Height,
-  IN BOOLEAN      IsAlpha
+  IN UINT16     Width,
+  IN UINT16     Height,
+  IN BOOLEAN    IsAlpha
   );
 
 NDK_UI_IMAGE *
 CreateFilledImage (
-  IN INTN                          Width,
-  IN INTN                          Height,
-  IN BOOLEAN                       IsAlpha,
-  IN EFI_GRAPHICS_OUTPUT_BLT_PIXEL *Color
+  IN INTN                             Width,
+  IN INTN                             Height,
+  IN BOOLEAN                          IsAlpha,
+  IN EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *Color
   );
 
 NDK_UI_IMAGE *
@@ -184,160 +186,120 @@ CopyImage (
 
 NDK_UI_IMAGE *
 CopyScaledImage (
-  IN NDK_UI_IMAGE      *OldImage,
-  IN INTN              Ratio
+  IN NDK_UI_IMAGE   *OldImage,
+  IN INTN           Ratio
   );
 
 NDK_UI_IMAGE *
 DecodePNG (
-  IN VOID                          *Buffer,
-  IN UINT32                        BufferSize
+  IN VOID     *Buffer,
+  IN UINT32   BufferSize
   );
 
 VOID
 BltImage (
-  IN NDK_UI_IMAGE        *Image,
-  IN INTN                Xpos,
-  IN INTN                Ypos
+  IN NDK_UI_IMAGE   *Image,
+  IN INTN           Xpos,
+  IN INTN           Ypos
   );
 
 VOID
 RestrictImageArea (
-  IN     NDK_UI_IMAGE       *Image,
-  IN     INTN               AreaXpos,
-  IN     INTN               AreaYpos,
-  IN OUT INTN               *AreaWidth,
-  IN OUT INTN               *AreaHeight
+  IN     NDK_UI_IMAGE   *Image,
+  IN     INTN           AreaXpos,
+  IN     INTN           AreaYpos,
+  IN OUT INTN           *AreaWidth,
+  IN OUT INTN           *AreaHeight
   );
 
 VOID
 ComposeImage (
-  IN OUT NDK_UI_IMAGE        *Image,
-  IN     NDK_UI_IMAGE        *TopImage,
-  IN     INTN                Xpos,
-  IN     INTN                Ypos
+  IN OUT NDK_UI_IMAGE   *Image,
+  IN     NDK_UI_IMAGE   *TopImage,
+  IN     INTN           Xpos,
+  IN     INTN           Ypos
   );
 
 VOID
 RawCompose (
-  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL *CompBasePtr,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *TopBasePtr,
-  IN     INTN                          Width,
-  IN     INTN                          Height,
-  IN     INTN                          CompLineOffset,
-  IN     INTN                          TopLineOffset
+  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *CompBasePtr,
+  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *TopBasePtr,
+  IN     INTN                             Width,
+  IN     INTN                             Height,
+  IN     INTN                             CompLineOffset,
+  IN     INTN                             TopLineOffset
   );
 
 VOID
 RawComposeOnFlat (
-  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL *CompBasePtr,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *TopBasePtr,
-  IN     INTN                          Width,
-  IN     INTN                          Height,
-  IN     INTN                          CompLineOffset,
-  IN     INTN                          TopLineOffset
+  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *CompBasePtr,
+  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *TopBasePtr,
+  IN     INTN                             Width,
+  IN     INTN                             Height,
+  IN     INTN                             CompLineOffset,
+  IN     INTN                             TopLineOffset
   );
 
 VOID
 RawCopy (
-  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL *CompBasePtr,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *TopBasePtr,
-  IN     INTN                          Width,
-  IN     INTN                          Height,
-  IN     INTN                          CompLineOffset,
-  IN     INTN                          TopLineOffset
+  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *CompBasePtr,
+  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *TopBasePtr,
+  IN     INTN                             Width,
+  IN     INTN                             Height,
+  IN     INTN                             CompLineOffset,
+  IN     INTN                             TopLineOffset
   );
+
 //
 // Opacity level can be set from 1-255, 0 = Off
 //
-VOID
-RawComposeAlpha (
-  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL *CompBasePtr,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *TopBasePtr,
-  IN     INTN                          Width,
-  IN     INTN                          Height,
-  IN     INTN                          CompLineOffset,
-  IN     INTN                          TopLineOffset,
-  IN     INTN                          Opacity
-  );
+//VOID
+//RawComposeAlpha (
+//  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *CompBasePtr,
+//  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *TopBasePtr,
+//  IN     INTN                             Width,
+//  IN     INTN                             Height,
+//  IN     INTN                             CompLineOffset,
+//  IN     INTN                             TopLineOffset,
+//  IN     INTN                             Opacity
+//  );
+
 //
 // ColorDiff is adjustable color saturation level to Top Image which can be set from -255 to 255, 0 = no adjustment.
 //
 VOID
 RawComposeColor (
-  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL *CompBasePtr,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *TopBasePtr,
-  IN     INTN                          Width,
-  IN     INTN                          Height,
-  IN     INTN                          CompLineOffset,
-  IN     INTN                          TopLineOffset,
-  IN     INTN                          ColorDiff
+  IN OUT EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *CompBasePtr,
+  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *TopBasePtr,
+  IN     INTN                             Width,
+  IN     INTN                             Height,
+  IN     INTN                             CompLineOffset,
+  IN     INTN                             TopLineOffset,
+  IN     INTN                             ColorDiff
   );
 
 VOID
 FillImage (
-  IN OUT NDK_UI_IMAGE                  *Image,
-  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL *Color
+  IN OUT NDK_UI_IMAGE                     *Image,
+  IN     EFI_GRAPHICS_OUTPUT_BLT_PIXEL    *Color
   );
 
 VOID
 FreeImage (
-  IN NDK_UI_IMAGE    *Image
+  IN NDK_UI_IMAGE   *Image
   );
 
 /*======= NdkBootPicker.c =========*/
 
 VOID
 DrawImageArea (
-  IN NDK_UI_IMAGE      *Image,
-  IN INTN              AreaXpos,
-  IN INTN              AreaYpos,
-  IN INTN              AreaWidth,
-  IN INTN              AreaHeight,
-  IN INTN              ScreenXpos,
-  IN INTN              ScreenYpos
-  );
-
-VOID
-PrintLabel (
-  IN OC_BOOT_ENTRY   *Entries,
-  IN UINTN           *VisibleList,
-  IN UINTN           VisibleIndex,
-  IN INTN            Xpos,
-  IN INTN            Ypos
-  );
-
-BOOLEAN
-MouseInRect (
-  IN AREA_RECT     *Place
-  );
-
-BOOLEAN
-IsMouseInPlace (
-  IN INTN          Xpos,
-  IN INTN          Ypos,
-  IN INTN          AreaWidth,
-  IN INTN          AreaHeight
-  );
-
-VOID
-DrawPointer (
-  VOID
-  );
-
-VOID
-HidePointer (
-  VOID
-  );
-
-VOID
-RedrawPointer (
-  VOID
-  );
-
-VOID
-SystemReset (
-  IN EFI_RESET_TYPE         ResetType
+  IN NDK_UI_IMAGE   *Image,
+  IN INTN           AreaXpos,
+  IN INTN           AreaYpos,
+  IN INTN           AreaWidth,
+  IN INTN           AreaHeight,
+  IN INTN           ScreenXpos,
+  IN INTN           ScreenYpos
   );
 
 #endif /* NdkBootPicker_h */
