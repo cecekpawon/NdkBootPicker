@@ -196,7 +196,7 @@ SystemReset (
   )
 {
   if (ResetType == EfiResetCold) {
-    DirectRestCold ();
+    DirectResetCold ();
   }
   gRT->ResetSystem (ResetType, EFI_SUCCESS, 0, NULL);
 }
@@ -556,7 +556,7 @@ InitMouse (
     mPointer.Pointer = NULL;
     mPointer.MouseEvent = NoEvents;
     mPointer.SimplePointerProtocol = NULL;
-    DEBUG ((DEBUG_INFO, "OCMouse: No Mouse found!\n"));
+    DEBUG ((DEBUG_INFO, "OCUI: No Mouse found!\n"));
     return Status;
   }
 
@@ -579,7 +579,7 @@ InitMouse (
   }
 
   if (mPointer.Pointer == NULL) {
-    DEBUG ((DEBUG_INFO, "OCMouse: No Mouse Icon found!\n"));
+    DEBUG ((DEBUG_INFO, "OCUI: No Mouse Icon found!\n"));
     mPointer.SimplePointerProtocol = NULL;
     return EFI_NOT_FOUND;
   }
