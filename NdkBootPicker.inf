@@ -35,8 +35,9 @@
 #
 
 [Sources]
-  NdkBootPicker.c
+  AudioSupport.c
   ImageSupport.c
+  NdkBootPicker.c
 
 [Packages]
   OpenCorePkg/OpenCorePkg.dec
@@ -47,9 +48,12 @@
 [Protocols]
   gOcInterfaceProtocolGuid                 ## SOMETIMES_PRODUCES
   gEfiSimplePointerProtocolGuid            ## BY_START
+  gEfiAudioDecodeProtocolGuid
 
 [LibraryClasses]
+  OcAudioLib
   OcBootManagementLib
+  OcConfigurationLib
   OcPngLib
   OcStorageLib
   UefiBootServicesTableLib

@@ -17,22 +17,31 @@
 #include <Protocol/AppleKeyMapAggregator.h>
 #include <Protocol/SimplePointer.h>
 
+#include <Protocol/AudioDecode.h>
+#include <Protocol/AudioIo.h>
+
 #include <IndustryStandard/AppleCsrConfig.h>
 
 #include <Library/BaseLib.h>
 #include <Library/BaseMemoryLib.h>
-#include <Library/OcDebugLogLib.h>
+#include <Library/DevicePathLib.h>
 #include <Library/MemoryAllocationLib.h>
-#include <Library/OcAppleKeyMapLib.h>
-#include <Library/OcBootManagementLib.h>
-#include <Library/OcConsoleLib.h>
 #include <Library/PrintLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiRuntimeServicesTableLib.h>
-#include <Library/OcPngLib.h>
+
+#include <Library/OcAppleKeyMapLib.h>
+#include <Library/OcAudioLib.h>
+#include <Library/OcBootManagementLib.h>
+#include <Library/OcConfigurationLib.h>
+#include <Library/OcConsoleLib.h>
+#include <Library/OcDebugLogLib.h>
+#include <Library/OcDevicePathLib.h>
 #include <Library/OcFileLib.h>
-#include <Library/OcStorageLib.h>
+#include <Library/OcMainLib.h>
 #include <Library/OcMiscLib.h>
+#include <Library/OcPngLib.h>
+#include <Library/OcStorageLib.h>
 #include <Library/OcTimerLib.h>
 
 #define NDK_BOOTPICKER_VERSION   "0.1.9"
@@ -300,6 +309,48 @@ DrawImageArea (
   IN INTN           AreaHeight,
   IN INTN           ScreenXpos,
   IN INTN           ScreenYpos
+  );
+
+/*
+  AudioSupport
+*/
+
+typedef enum {
+  AudioIndexHover,
+  AudioIndexToolbarHover,
+  AudioIndexSelect,
+  AudioIndexInvalid
+} AUDIO_INDEX;
+
+typedef struct {
+  AUDIO_INDEX                   AudioIndex;
+  VOID                          *InBuffer;
+  UINT32                        InBufferSize;
+  VOID                          *OutBuffer;
+  UINT32                        OutBufferSize;
+  EFI_AUDIO_IO_PROTOCOL_FREQ    Frequency;
+  EFI_AUDIO_IO_PROTOCOL_BITS    Bits;
+  UINT8                         Channels;
+} AUDIO_DB;
+
+VOID
+GetAudioConfig (
+  IN OC_STORAGE_CONTEXT   *Storage
+  );
+
+VOID
+InitAudioResources (
+  IN  OC_STORAGE_CONTEXT  *Storage
+  );
+
+VOID
+FreeAudioResources (
+  VOID
+  );
+
+EFI_STATUS
+PlayAudio (
+  IN  AUDIO_INDEX   Index
   );
 
 #endif /* NdkBootPicker_h */

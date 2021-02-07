@@ -2256,6 +2256,7 @@ OcWaitForKeyIndex (
   INTN      KeyClick;
   INTN      CycleCount;
   INTN      ResultingKey;
+  BOOLEAN   ToolbarSelected;
 
   CycleCount = 0;
 
@@ -2291,9 +2292,11 @@ OcWaitForKeyIndex (
           CycleCount++;
           mPointer.MouseEvent = NoEvents;
           if (CycleCount == 10) {
+            ToolbarSelected = (mIconShutdown.IsSelected || mIconReset.IsSelected);
             KeyClick = CheckIconClick ();
-            if (KeyClick == UI_INPUT_SYSTEM_RESET || KeyClick == UI_INPUT_SYSTEM_SHUTDOWN) {
-              mCurrentSelection = UI_INPUT_SYSTEM_RESET;
+            if ((KeyClick == UI_INPUT_SYSTEM_RESET || KeyClick == UI_INPUT_SYSTEM_SHUTDOWN)
+              && (KeyClick != mCurrentSelection || !ToolbarSelected)) {
+              mCurrentSelection = KeyClick; //UI_INPUT_SYSTEM_RESET
               return OC_INPUT_TAB;
             } else if (KeyClick >= 0 && KeyClick != mCurrentSelection) {
               mCurrentSelection = KeyClick;
@@ -2369,6 +2372,8 @@ RestoreConsoleMode (
   gST->ConOut->SetCursorPosition (gST->ConOut, 0, 0);
 
   KillMouse ();
+
+  FreeAudioResources ();
 }
 
 STATIC
@@ -2472,6 +2477,8 @@ UiMenuMain (
   if (VisibleList == NULL) {
     return EFI_OUT_OF_RESOURCES;
   }
+
+  InitAudioResources (mStorage);
 
   InitScreen ();
   ClearScreen (&mTransparentPixel);
@@ -2579,6 +2586,9 @@ UiMenuMain (
       --TimeOutSeconds;
 
       if ((KeyIndex == OC_INPUT_TIMEOUT && TimeOutSeconds == 0) || KeyIndex == OC_INPUT_CONTINUE) {
+        if (KeyIndex == OC_INPUT_CONTINUE) {
+          PlayAudio (AudioIndexSelect);
+        }
         if (mIconReset.IsSelected) {
           mIconReset.Action (EfiResetCold);
         } else if (mIconShutdown.IsSelected) {
@@ -2614,9 +2624,14 @@ UiMenuMain (
 
         break;
       } else if (KeyIndex == OC_INPUT_FUNCTIONAL(10)) {
+        HidePointer ();
+
         TimeOutSeconds = 0;
 
         TakeScreenShot (L"ScreenShot");
+
+        DrawPointer ();
+        PlayAudio (AudioIndexSelect);
       } else if (KeyIndex == OC_INPUT_MORE && !mIconReset.IsSelected && !mIconShutdown.IsSelected) {
         HidePointer ();
 
@@ -2639,6 +2654,7 @@ UiMenuMain (
         PlayChosen = PickerContext->PickerAudioAssist;
 
         DrawPointer ();
+        PlayAudio (AudioIndexHover);
       } else if (KeyIndex == OC_INPUT_TAB) {
         HidePointer ();
 
@@ -2651,6 +2667,7 @@ UiMenuMain (
         }
 
         DrawPointer ();
+        PlayAudio (AudioIndexToolbarHover);
       } else if ((KeyIndex == OC_INPUT_UP && !mIconReset.IsSelected && !mIconShutdown.IsSelected)
                  || (KeyIndex == OC_INPUT_LEFT && !mIconReset.IsSelected && !mIconShutdown.IsSelected)) {
         HidePointer ();
@@ -2673,6 +2690,7 @@ UiMenuMain (
         PlayChosen = PickerContext->PickerAudioAssist;
 
         DrawPointer ();
+        PlayAudio (AudioIndexHover);
       } else if ((KeyIndex == OC_INPUT_DOWN && !mIconReset.IsSelected && !mIconShutdown.IsSelected)
                  || (KeyIndex == OC_INPUT_RIGHT && !mIconReset.IsSelected && !mIconShutdown.IsSelected)) {
         HidePointer ();
@@ -2695,6 +2713,7 @@ UiMenuMain (
         PlayChosen = PickerContext->PickerAudioAssist;
 
         DrawPointer ();
+        PlayAudio (AudioIndexHover);
       } else if (KeyIndex == OC_INPUT_POINTER) {
         HidePointer ();
 
@@ -2714,6 +2733,7 @@ UiMenuMain (
         PlayChosen = PickerContext->PickerAudioAssist;
 
         DrawPointer ();
+        PlayAudio (AudioIndexHover);
       } else if (KeyIndex != OC_INPUT_INVALID && (UINTN)KeyIndex < VisibleIndex) {
         ASSERT (KeyIndex >= 0);
 
@@ -2733,6 +2753,8 @@ UiMenuMain (
           Status = OcSetDefaultBootEntry (PickerContext, BootEntries[VisibleList[KeyIndex]]);
           DEBUG ((DEBUG_INFO, "OCUI: Setting default - %r\n", Status));
         }
+
+        PlayAudio (AudioIndexSelect);
 
         RestoreConsoleMode (PickerContext);
 
@@ -2811,6 +2833,8 @@ GuiOcInterfacePopulate (
   mStorage = Storage;
 
   Context->ShowMenu = OcShowMenuByOc;
+
+  GetAudioConfig (mStorage);
 
   return EFI_SUCCESS;
 }

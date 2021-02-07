@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>UEFI</key>
+        <dict>
+            <key>Audio</key>
+            <dict>
+                <key>AudioCodec</key>
+                <integer>0</integer>
+                <key>AudioDevice</key>
+                <string>PciRoot(0x0)/Pci(0x1b,0x0)</string>
+                <key>AudioOut</key>
+                <integer>1</integer>
+                <key>AudioSupport</key>
+                <false/>
+                <key>MinimumVolume</key>
+                <integer>20</integer>
+                <key>VolumeAmplifier</key>
+                <integer>70</integer>
+            </dict>
+        </dict>
+    </dict>
+</plist>
