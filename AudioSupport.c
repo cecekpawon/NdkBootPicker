@@ -264,7 +264,7 @@ GetAudioDecoder (
           );
         //DEBUG ((DEBUG_INFO, "DecodeAny - %r\n", Status));
         //DEBUG ((DEBUG_INFO, "OutBuffer (%c) OutBufferSize (%d)\n", AudioDb->OutBuffer != NULL ? 'Y' : 'N', AudioDb->OutBufferSize));
-        //DEBUG ((DEBUG_INFO, "Frequency (%d) Bits (%d) Channels (%d) \n", AudioDb->Frequency, AudioDb->Bits, AudioDb->Channels));
+        //DEBUG ((DEBUG_INFO, "Frequency (%d) Bits (%d) Channels (%d)\n", AudioDb->Frequency, AudioDb->Bits, AudioDb->Channels));
       } else {
         //DEBUG ((DEBUG_WARN, "BAD read file\n"));
       }

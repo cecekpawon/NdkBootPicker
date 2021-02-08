@@ -374,7 +374,6 @@ TakeScreenShot (
   )
 {
   EFI_STATUS              Status;
-  EFI_FILE_PROTOCOL       *Fs;
   EFI_TIME                Date;
   NDK_UI_IMAGE            *Image;
   EFI_UGA_PIXEL           *ImagePNG;
@@ -444,13 +443,7 @@ TakeScreenShot (
     return;
   }
 
-  Status = mStorage->FileSystem->OpenVolume (mStorage->FileSystem, &Fs);
-  if (EFI_ERROR (Status)) {
-    DEBUG ((DEBUG_INFO, "OCUI: Locating Writeable file system - %r\n", Status));
-    return;
-  }
-
-  Status = SetFileData (Fs, Path, Buffer, (UINT32) BufferSize);
+  Status = SetFileData (mStorage->Storage, Path, Buffer, (UINT32) BufferSize);
   DEBUG ((DEBUG_INFO, "OCUI: Screenshot was taken - %r\n", Status));
 
   if (Buffer != NULL) {
